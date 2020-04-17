@@ -51,3 +51,18 @@ It's only when w⋅x+b is close to the middle that we'll have variations.
 Confusing name since most of the time implemented with sigmoid. Basically refers to a network with an input layer, an output layer, and some *hidden* layer which simply means some layer in between.
 
 Most of the networks are **feed-forwards** networks, which means output of an neuron is fed to the the input of the next one, with no loops.
+
+## Networks
+
+### Cost function
+
+Represent how well weights/biais are found via an algorithm, aka **Mean Squared Error**. The formula is
+```
+C(w,b)≡(1/2n) * ∑(on x) ‖y(x)−a‖2
+
+w => weights
+b => biais
+n => number of training inputs
+a => vectors of all outputs
+|| || => length of the vector
+```
