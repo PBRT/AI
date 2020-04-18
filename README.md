@@ -62,7 +62,27 @@ C(w,b)≡(1/2n) * ∑(on x) ‖y(x)−a‖2
 
 w => weights
 b => biais
-n => number of training inputs
+n => number of training inputs (i.e. number of data to train the network)
 a => vectors of all outputs
 || || => length of the vector
+|| y(x) - a || => reprensent the error between what we want (y(x)) vs what we get (a)
 ```
+
+If the network is good, y(x) - a will tend close to 0, so C will go close to 0, which means network is good. So we want to find the weights and biais good for getting that to 0, using **gradient descent**. 
+
+We use **quadratic** equation because small changes wouldn't reflect without it.
+
+### Gradient descent
+
+That's the best way to find the minimum of the cost function, no matter how many variables C depends on. Quite a complex mathematical proof, but in short we make the input change a bit, and compute the output, making sure it's negative (going lower).
+
+The problem is it's very expensive to compute the gradient for **all the inputs** sets, specially if many. A way to speed this up is called **stochastic gradient descent**. Basically the same shit, but we cherry pick a small amount of random input and use that to get the gradient.
+
+To compute the next *position* in the gradient descent process, we use the following formulas:
+```
+wk→w′k=wk−η/m * ∑j∂CXj∂wk
+```
+
+Complex but basically what that means is we pick a random bunch of inputs, compute the cost, and from there we get the next coordinates to look for minimal (same with biais). Once done, we select another bunch of inputs and we do it again.
+
+
