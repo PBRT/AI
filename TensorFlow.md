@@ -10,3 +10,9 @@
   * One of them is the SGD or stochastic gradient descent
 * Convergence
   * The idea of getting to an accuracy of 100%
+  
+### Activation Function
+
+Executed for each layer of the network.
+- Relu: Means if X > 0, return X else return 0
+- Softmax: Take all the output, and return the biggest one
